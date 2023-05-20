@@ -241,3 +241,39 @@ li {
 .footer__estudiantes li {
     margin-bottom: 2rem;
 }
+
+
+/* MI CUENTA */
+.cuenta__heading {
+    color: var(--blanco);
+}
+
+.cuenta__datos {
+    color: var(--blanco);
+}
+
+.cuenta__flex {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.cuenta__numCuenta span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.cuenta__botones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.cuenta__boton {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    padding: 1rem 3rem;    
+}
+
+.cuenta__boton:hover {
+    background-color: var(--azul);
+    color: var(--blanco);
+    transition: .3s;
+}
