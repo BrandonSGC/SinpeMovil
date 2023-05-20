@@ -1,0 +1,243 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+
+/* Variables */
+:root {
+    --oscuro: #222831;
+    --gris: #393E46;
+    --turquesa: #00ADB5;
+    --grisClaro: #EEEEEE;
+    --blanco: #FFFFFF;
+    --azul: #215AA8;
+}
+
+/* Globales */
+html { /* Box Model */
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.6rem;
+    background-color: var(--oscuro);
+    font-family: 'Raleway', sans-serif;
+}
+h1 {
+    font-size: 4.2rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.8rem;
+}
+img {
+    max-width: 100%;
+    display: block;    
+}
+a {
+    text-decoration: none;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+/* Utilidades */
+[class$="__contenedor"] {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+[class$="__heading"] {
+    text-align: center;
+}
+
+/* LOGIN */
+.login {       
+    width: 90%;
+    height: auto; 
+    background-color: var(--blanco);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+@media (min-width: 768px) {
+    .login {        
+        width: 50rem;
+        height: auto; 
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.form__input {
+    border: solid 1.5px var(--azul);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    width: 70%;
+}
+.form__boton {
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    border-radius: .6rem;
+}
+
+
+/* HEADER */
+.header {
+    background-color: var(--grisClaro);
+    padding: 3rem 0;
+}
+.header__logo {
+    margin: 0 auto;
+}
+.navegacion {
+    padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+    .header__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }    
+    .header__logo {
+        width: 15rem;        
+    }
+    .navegacion {
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.navegacion__enlace {
+    display: block;
+    text-align: center;
+    padding: 1rem 3rem;
+    color: var(--azul);
+    font-size: 2rem;
+}
+
+.navegacion__enlace:hover {
+    background-color: var(--azul);
+    color: var(--grisClaro);
+    transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .navegacion__enlace--activo {
+        background-color: var(--turquesa);
+        color: #EEEEEE;
+    }
+}
+
+/* MAIN */
+.main {
+    margin: 5rem 0;
+}
+.main__texto {
+    color: var(--grisClaro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main__heading .span1 {    
+    font-weight: 900;    
+}
+.main__heading .span2 {    
+    font-weight: 400;
+    
+}
+.main__boton {
+    background-color: var(--turquesa);
+    color: var(--grisClaro);
+    padding: 1.5rem 4rem;    
+    margin-bottom: 5rem;
+    border-radius: .5rem;
+    font-weight: 700;
+}
+
+.main__boton:hover {
+    background-color: var(--azul);
+    color: var(--blanco);
+    transition: .3s;
+}
+
+@media (min-width: 930px) {
+    .main__grid {
+        margin: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--blanco);
+    margin-top: 5rem;
+}
+
+.footer__texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer__texto h3 {
+    color: var(--azul);
+}
+
+@media (min-width: 768px) {
+    .footer__texto {
+        padding-bottom: 5rem;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+}
+
+.footer__logo {
+    margin: 1rem auto;
+    height: 11rem;
+}
+.footer_cuc {
+    color: var(--azul);
+    font-weight: 700;
+}
+.footer__organizacion,
+.footer__estudiantes {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.footer__organizacion h3{
+    margin-bottom: 0;
+}
+
+.footer__estudiantes li {
+    margin-bottom: 2rem;
+}
