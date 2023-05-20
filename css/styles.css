@@ -257,10 +257,12 @@ li {
     flex-direction: column-reverse;
     align-items: center;
 }
-.cuenta__numCuenta span {
+.cuenta__numCuenta span,
+.cuenta__saldo span {
     font-size: 2rem;
     font-weight: 700;
 }
+
 .cuenta__botones {
     display: flex;
     justify-content: center;
