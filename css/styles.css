@@ -286,21 +286,32 @@ li {
     transition: .3s;
 }
 
-/* MOVIMIENTOS */
+/* MOVIMIENTOS - FALTA HACERLO RESPONSIVE.*/
 
 .movimientos__heading {
     color: var(--blanco);
 }
-table {
+.movimientos__tabla {
     margin: 5rem auto;
     border-collapse: collapse;
-    width: 100%;
-    color: white;
+    width: 60%;
+    color: var(--blanco);
     background-color: var(--azul);
 }
 
 th, td {
-    padding: 8px;
+    padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--blanco);    
+}
+
+@media (max-width:768px) {
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: .2rem;
+    }    
 }

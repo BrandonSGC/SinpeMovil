@@ -8,7 +8,7 @@ let personas = [
   ];
 
   // Seleccionamos la tablaPersonas.
-  let tabla = document.querySelector("#tablaPersonas");
+  let tabla = document.querySelector(".movimientos__tabla");
 
   // Recorremos cada objeto en el array e insertamos el html con los datos.
   personas.forEach( (persona) => {
