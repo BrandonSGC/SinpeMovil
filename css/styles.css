@@ -247,15 +247,20 @@ li {
 .cuenta__heading {
     color: var(--blanco);
 }
-
+.cuenta__user {
+    margin: 0;
+}
 .cuenta__datos {
     color: var(--blanco);
 }
 
 .cuenta__flex {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
+}
+.cuenta__numCuenta {
+    color: var(--blanco);
 }
 .cuenta__numCuenta span,
 .cuenta__saldo span {
@@ -272,10 +277,30 @@ li {
     background-color: var(--turquesa);
     color: var(--blanco);
     padding: 1rem 3rem;    
+    border-radius: .6rem;
 }
 
 .cuenta__boton:hover {
     background-color: var(--azul);
     color: var(--blanco);
     transition: .3s;
+}
+
+/* MOVIMIENTOS */
+
+.movimientos__heading {
+    color: var(--blanco);
+}
+table {
+    margin: 5rem auto;
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+    background-color: var(--azul);
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid white;
 }

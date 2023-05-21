@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,17 +27,20 @@
     </header>
 
     <!-- MAIN -->
-    <main class="main">
-        <div class="main__contenedor">
-            <div class="main__grid">
-                <div class="main__texto">
-                    <h1 class="main__heading">Recibe y Realiza pagos con "<span class="span1">Sinpe</span><span class="span2">Móvil</span>"</h1>
-                    <a href="./miCuenta.html" class="main__boton">Mi Cuenta</a>
-                </div>
-                <div class="main__imagen">
-                    <img src="./animations/business-investor-gaining-profit-from-investment.gif" alt="">
-                </div>
-            </div>            
+    <main class="movimientos">
+        <div class="movimientos__contenedor">
+            <table id="tablaPersonas">                
+                <h2 class="movimientos__heading">Movimientos</h2>
+                <p class="cuenta__numCuenta"> <span>Cuenta:</span> #712378</p>              
+                <tr>
+                  <th>Fecha</th>
+                  <th>Código</th>
+                  <th>Descripción</th>
+                  <th>Débito</th>
+                  <th>Crédito</th>
+                </tr>
+            </table>
+            <script src="./js/app.js"></script>
         </div>
     </main>
 
