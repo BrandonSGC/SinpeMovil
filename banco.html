@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>SinpeMóvil</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__contenedor">
+            <div class="header__flex">
+                <div class="header__imagen">
+                    <img class="header__logo" src="./img/SinpeMovilLogo.png" alt="" class="logo">
+                </div>
+                <nav class="navegacion">
+                    <a href="./index.html" class="navegacion__enlace">Inicio</a>
+                    <a href="./miCuenta.html" class="navegacion__enlace">Mi Cuenta</a>
+                    <a href="./transferir.html" class="navegacion__enlace">Transferir</a>
+                    <a href="./acercaDe.html" class="navegacion__enlace navegacion__enlace--activo">Acerca de</a>
+                </nav>
+            </div>            
+        </div>
+    </header>
+
+    <!-- Formulario CRUD - Banco -->
+    <section class="banco">
+        <div class="banco__contenedor">
+            <div>
+                <h2 class="banco__heading">Banco: </h2>
+                <form action="" class="banco__formulario">
+                    <label for="codigo">Codigo: </label>
+                    <input type="text" name="" id="codigo">
+
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="" id="nombre">
+
+                    <label for="estado">Estado: </label>
+                    <select name="" id="estado">
+                        <option value="A">Activo</option>
+                        <option value="I">Inactivo</option>
+                    </select>
+
+                    <div class="banco__botones">
+                        <a href="#" class="banco__boton">Crear</a>
+                        <a href="#" class="banco__boton">Buscar</a>
+                        <a href="#" class="banco__boton">Editar</a>
+                        <a href="#" class="banco__boton">Eliminar</a>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <div class="footer__texto">
+                <div class="footer__organizacion">
+                    <h3>Organizacion:</h3>
+                    <div class="footer__imagen">
+                        <img class="footer__logo" src="/img/CUC.png" alt="">
+                    </div>
+                    <a class="footer_cuc" href="https://www.cuc.ac.cr/" target="_blank">Colegio Universitario de Cartago</a>
+                </div>
+                <div class="footer__estudiantes">
+                    <h3>Estudiantes:</h3>
+                    <ul>
+                        <li>Brandon Gómez Carvajal</li>
+                        <li>Jazmín Solano Serrano</li>
+                        <li>Josue Leitón Nuñez</li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </footer>
+</body>
+</html>
