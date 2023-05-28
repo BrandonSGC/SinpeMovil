@@ -29,26 +29,29 @@
     <!-- Formulario CRUD - Banco -->
     <section class="banco">
         <div class="banco__contenedor">
-            <div>
-                <h2 class="banco__heading">Banco: </h2>
+            <div>                
                 <form action="" class="banco__formulario">
-                    <label for="codigo">Codigo: </label>
-                    <input type="text" name="" id="codigo">
+                    <h2 class="banco__heading">Banco</h2>
+                    <fieldset>
+                        <label for="codigo">Codigo: </label>
+                        <input class="banco__input" type="text" name="" id="codigo">
 
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" name="" id="nombre">
+                        <label for="nombre">Nombre: </label>
+                        <input class="banco__input" type="text" name="" id="nombre">
 
-                    <label for="estado">Estado: </label>
-                    <select name="" id="estado">
-                        <option value="A">Activo</option>
-                        <option value="I">Inactivo</option>
-                    </select>
+                        <label for="estado">Estado: </label>
+                        <select class="banco__input" name="" id="estado">
+                            <option value="A">Activo</option>
+                            <option value="I">Inactivo</option>
+                        </select>
+                    </fieldset>
+                    
 
                     <div class="banco__botones">
-                        <a href="#" class="banco__boton">Crear</a>
-                        <a href="#" class="banco__boton">Buscar</a>
-                        <a href="#" class="banco__boton">Editar</a>
-                        <a href="#" class="banco__boton">Eliminar</a>
+                        <button class="banco__boton" type="submit">Crear</button>
+                        <button class="banco__boton" type="submit">Buscar</button>
+                        <button class="banco__boton" type="submit">Editar</button>
+                        <button class="banco__boton" type="submit">Eliminar</button>
                     </div>
                 </form>
                 
