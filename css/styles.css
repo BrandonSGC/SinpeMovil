@@ -274,6 +274,7 @@ label {
 }
 .cuenta__numCuenta {
     color: var(--blanco);
+    text-align: center;
 }
 .cuenta__numCuenta span,
 .cuenta__saldo span {
@@ -299,8 +300,8 @@ label {
     transition: .3s;
 }
 
-/* MOVIMIENTOS.*/
 
+/* MOVIMIENTOS.*/
 .movimientos__heading {
     color: var(--blanco);
 }
@@ -359,6 +360,7 @@ clases preferiblemente, no tan global con las etiquetas. */
     color: var(--oscuro);
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 3rem;
+    border-radius: 1rem;
 }
   
   
@@ -381,7 +383,6 @@ clases preferiblemente, no tan global con las etiquetas. */
 
   
 /* Formulario CRUD - Banco */
-
 .banco__formulario {
     margin: 0 auto;
     background-color: var(--blanco);
@@ -409,6 +410,7 @@ clases preferiblemente, no tan global con las etiquetas. */
     color: var(--oscuro);
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 3rem;
+    border-radius: 1rem;
 }
 
 #estado {
@@ -446,5 +448,72 @@ clases preferiblemente, no tan global con las etiquetas. */
 @media (min-width: 768px) {
     .banco__boton {
         padding: 1rem 2rem;
+    }
+}
+
+
+/* Formulario CRUD - Clientes */
+.clientes__formulario {
+    margin: 0 auto;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+    .clientes__formulario {
+        max-width: 100rem;
+    }
+    .clientes__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.clientes__heading {
+    padding-top: 2rem;
+}
+
+.clientes__input {
+    border: none;
+    font-size: 1.6rem;
+    height: auto;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--grisClaro);
+    color: var(--oscuro);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.clientes__botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.clientes__boton {
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: .6rem;
+    width: 100%;
+    border: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+.clientes__boton:hover {
+    background-color: var(--azul_oscuro);
+    transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .clientes__botones {
+        justify-content: space-evenly;
+    }
+    .clientes__boton {
+        padding: 1.6rem;
     }
 }

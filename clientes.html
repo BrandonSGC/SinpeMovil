@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>SinpeMóvil</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__contenedor">
+            <div class="header__flex">
+                <div class="header__imagen">
+                    <img class="header__logo" src="./img/SinpeMovilLogo.png" alt="" class="logo">
+                </div>
+                <nav class="navegacion">
+                    <a href="./index.html" class="navegacion__enlace">Inicio</a>
+                    <a href="./miCuenta.html" class="navegacion__enlace">Mi Cuenta</a>
+                    <a href="./transferir.html" class="navegacion__enlace">Transferir</a>
+                    <a href="./acercaDe.html" class="navegacion__enlace navegacion__enlace--activo">Acerca de</a>
+                </nav>
+            </div>            
+        </div>
+    </header>
+
+    <!-- Formulario CRUD - Banco -->
+    <section class="clientes">
+        <div class="clientes__contenedor">
+            <div>                
+                <form action="" class="clientes__formulario">
+                    <h2 class="clientes__heading">Clientes</h2>
+                    <div class="clientes__grid">
+                        <fieldset>
+                            <label for="cedula">Cedula: </label>
+                            <input class="clientes__input" type="text" name="" id="cedula">
+    
+                            <label for="nombre">Nombre: </label>
+                            <input class="clientes__input" type="text" name="" id="nombre">
+    
+                            <label for="apellidos">Apellidos: </label>
+                            <input class="clientes__input" type="text" name="" id="apellidos">
+                            
+                            <label for="telefono">Telefono: </label>
+                            <input class="clientes__input" type="text" name="" id="telefono">
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="direccion">Direccion: </label>
+                            <textarea class="clientes__input" id="direccion" cols="30" rows="17"></textarea>
+                        </fieldset>    
+                    </div>
+                    <div class="clientes__botones">
+                        <button class="clientes__boton" type="submit">Crear</button>
+                        <button class="clientes__boton" type="submit">Buscar</button>
+                        <button class="clientes__boton" type="submit">Editar</button>
+                        <button class="clientes__boton" type="submit">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <div class="footer__texto">
+                <div class="footer__organizacion">
+                    <h3>Organizacion:</h3>
+                    <div class="footer__imagen">
+                        <img class="footer__logo" src="/img/CUC.png" alt="">
+                    </div>
+                    <a class="footer_cuc" href="https://www.cuc.ac.cr/" target="_blank">Colegio Universitario de Cartago</a>
+                </div>
+                <div class="footer__estudiantes">
+                    <h3>Estudiantes:</h3>
+                    <ul>
+                        <li>Brandon Gómez Carvajal</li>
+                        <li>Jazmín Solano Serrano</li>
+                        <li>Josue Leitón Nuñez</li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </footer>
+</body>
+</html>
