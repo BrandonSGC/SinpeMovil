@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
-    <title>SinpeMóvil - Banco</title>
+    <title>SinpeMóvil</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -27,39 +26,23 @@
         </div>
     </header>
 
-    <!-- Formulario CRUD - Banco -->
-    <section class="banco">
-        <div class="banco__contenedor">
-            <div>                
-                <form action="" class="banco__formulario">
-                    <h2 class="banco__heading">Banco</h2>
-                    <fieldset>
-                        <!-- Eliminar campo de codigo -->
-                        <label for="codigo">Codigo: </label>
-                        <input class="banco__input" type="text" name="" id="codigo">
-
-                        <label for="nombre">Nombre: </label>
-                        <input class="banco__input" type="text" name="" id="nombre">
-
-                        <label for="estado">Estado: </label>
-                        <select class="banco__input" name="" id="estado">
-                            <option value="A">Activo</option>
-                            <option value="I">Inactivo</option>
-                        </select>
-                    </fieldset>
-                    
-
-                    <div class="banco__botones">
-                        <button class="banco__boton" type="submit">Crear</button>
-                        <button class="banco__boton" type="submit">Buscar</button>
-                        <button class="banco__boton" type="submit">Editar</button>
-                        <button class="banco__boton" type="submit">Eliminar</button>
-                    </div>
-                </form>
-                
-            </div>
+    <!-- MAIN -->
+    <main class="movimientosBCCR">
+        <div class="movimientosBCCR__contenedor">
+            <table class="movimientosBCCR__tabla">                
+                <h2 class="movimientosBCCR__heading">Registro de Movimientos BCCR</h2>
+                <tr>
+                  <th>Cedula</th>
+                  <th>Banco</th>
+                  <th>Fecha</th>
+                  <th>Código</th>
+                  <th>Monto</th>
+                  <th>Telefono</th>                  
+                </tr>
+            </table>
+            <script src="./js/app2.js"></script>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">

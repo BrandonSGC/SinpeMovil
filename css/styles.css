@@ -301,7 +301,7 @@ label {
 }
 
 
-/* MOVIMIENTOS.*/
+/* Movimientos.*/
 .movimientos__heading {
     color: var(--blanco);
 }
@@ -330,8 +330,22 @@ th, td {
     }    
 }
 
-/* TRANSFERIR, falta arreglar todo con selectores de 
-clases preferiblemente, no tan global con las etiquetas. */
+
+/* Movimientos BCCR */
+
+.movimientosBCCR__heading {
+    color: var(--blanco);
+}
+.movimientosBCCR__tabla {
+    margin: 5rem auto;
+    border-collapse: collapse;
+    width: 60%;
+    color: var(--blanco);
+    background-color: var(--azul);
+}
+
+
+/* Transferir */
 .transferir__formulario {
     margin: 0 auto;
     background-color: var(--blanco);
