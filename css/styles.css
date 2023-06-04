@@ -534,7 +534,7 @@ th, td {
 
 /* Fromulario CRUD - Cuentas */
 
-.cuenta__formulario {
+.crearCuenta__formulario {
     margin: 0 auto;
     background-color: var(--blanco);
     border-radius: 1rem;
@@ -542,17 +542,17 @@ th, td {
 }
 
 @media (min-width: 480px) {
-    .cuenta__formulario {
+    .crearCuenta__formulario {
       max-width: 50rem;
     }
 }
 
-.cuenta__heading {
+.crearCuenta__heading {
     padding-top: 2rem;
     color: var(--azul);
 }
 
-.cuenta__input {
+.crearCuenta__input {
     border: none;
     font-size: 1.6rem;
     height: auto;
@@ -565,44 +565,39 @@ th, td {
     border-radius: 1rem;
 }
 
-#estado {
-    cursor: pointer;
-}
-
-.cuenta__botones {
+.crearCuenta__botones {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: space-evenly;
+    gap: 1rem;    
 }
 
-.cuenta__boton {
+.crearCuenta__boton {
     padding: 1rem;
     color: var(--blanco);
     background-color: var(--azul);
     text-align: center;
     border-radius: .6rem;
-    width: 100%;
+    width: 70%;
     border: none;
     margin-bottom: 2rem;
     cursor: pointer;
 }
-.cuenta__boton:hover {
+.crearCuenta__boton:hover {
     background-color: var(--azul_oscuro);
     transition: .3s;
 }
 
 @media (min-width: 768px) {
-    .cuenta__botones {
+    .crearCuenta__botones {
         justify-content: space-evenly;
     }
 }
 
 @media (min-width: 768px) {
-    .cuenta__boton {
-        padding: 1rem 2rem;
+    .crearCuenta__boton {
+        padding: 1rem 2rem;        
     }
 }
-
 
 /* Formulario - Tipo de Cambio*/
 

@@ -28,42 +28,42 @@
     </header>
 
     <!-- Formulario CRUD - Cuenta -->
-    <section class="cuenta">
-        <div class="cuenta__contenedor">
+    <section class="crearCuenta">
+        <div class="crearCuenta__contenedor">
             <div>                
-                <form action="" class="cuenta__formulario">
-                    <h2 class="cuenta__heading">Cuenta</h2>
+                <form action="" class="crearCuenta__formulario">
+                    <h2 class="crearCuenta__heading">Cuenta</h2>
                     <fieldset>
                         <label for="banco">Seleccionar Banco: </label>
-                        <select class="cuenta__input" name="" id="banco">
+                        <select class="crearCuenta__input" name="" id="banco">
                             <option value="BCR">Banco de Costa Rica (BCR)</option>
                             <option value="BN">Banco Nacional (BN)</option>
-                        </select>
-
-                        <label for="cedula">Cedula del Cliente: </label>
-                        <input class="cuenta__input" type="text" name="" id="cedula">
+                        </select>                        
 
                         <label for="tipo_cuenta">Tipo de cuenta: </label>                        
-                        <select class="cuenta__input" name="" id="tipo_cuenta">
+                        <select class="crearCuenta__input" name="" id="estado">
                             <option value="BCR">Débito</option>
                             <option value="BN">Crédito</option>
                         </select>
 
                         <label for="tipo_moneda">Tipo de moneda: </label>                        
-                        <select class="cuenta__input" name="" id="tipo_moneda">
+                        <select class="crearCuenta__input" name="" id="tipo_moneda">
                             <option value="BCR">Colones</option>
                             <option value="BN">Dolares</option>
                         </select>
 
+                        <label for="cedula">Cedula del Cliente: </label>
+                        <input class="crearCuenta__input" type="text" name="" id="cedula">
+
                         <label for="num_cuenta">Número de Cuenta: </label>
-                        <input class="cuenta__input" type="text" name="" id="num_cuenta">
+                        <input class="crearCuenta__input" type="text" name="" id="num_cuenta">
+
+                        <label for="saldo">Saldo inicial: </label>
+                        <input class="crearCuenta__input" type="number" name="" id="saldo">
                     </fieldset> 
 
-                    <div class="cuenta__botones">
-                        <button class="cuenta__boton" type="submit">Crear</button>
-                        <button class="cuenta__boton" type="submit">Buscar</button>
-                        <button class="cuenta__boton" type="submit">Editar</button>
-                        <button class="cuenta__boton" type="submit">Eliminar</button>
+                    <div class="crearCuenta__botones">
+                        <button class="crearCuenta__boton" type="submit">Crear Cuenta</button>                        
                     </div>
                 </form>
                 
