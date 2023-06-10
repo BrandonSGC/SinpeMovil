@@ -35,31 +35,34 @@
                     <h2 class="crearCuenta__heading">Cuenta</h2>
                     <fieldset>
                         <label for="banco">Seleccionar Banco: </label>
-                        <select class="crearCuenta__input" name="" id="banco">
+                        <select class="crearCuenta__input" id="banco">
                             <option value="BCR">Banco de Costa Rica (BCR)</option>
                             <option value="BN">Banco Nacional (BN)</option>
                         </select>                        
 
                         <label for="tipo_cuenta">Tipo de cuenta: </label>                        
-                        <select class="crearCuenta__input" name="" id="estado">
+                        <select class="crearCuenta__input" id="estado">
                             <option value="BCR">Débito</option>
                             <option value="BN">Crédito</option>
                         </select>
 
                         <label for="tipo_moneda">Tipo de moneda: </label>                        
-                        <select class="crearCuenta__input" name="" id="tipo_moneda">
+                        <select class="crearCuenta__input" id="tipo_moneda">
                             <option value="BCR">Colones</option>
                             <option value="BN">Dolares</option>
                         </select>
 
-                        <label for="cedula">Cedula del Cliente: </label>
-                        <input class="crearCuenta__input" type="text" name="" id="cedula">
+                        <label for="cedulaCliente">Cedula del Cliente: </label>
+                        <select class="crearCuenta__input" id="cedulaCliente">
+                            <option value="">117970823</option>
+                            <option value="">134342342</option>
+                        </select>
 
                         <label for="num_cuenta">Número de Cuenta: </label>
-                        <input class="crearCuenta__input" type="text" name="" id="num_cuenta">
+                        <input class="crearCuenta__input" type="number" id="num_cuenta">
 
-                        <label for="saldo">Saldo inicial: </label>
-                        <input class="crearCuenta__input" type="number" name="" id="saldo">
+                        <label for="saldoInicial">Saldo inicial: </label>
+                        <input class="crearCuenta__input" type="number" id="saldoInicial">
                     </fieldset> 
 
                     <div class="crearCuenta__botones">
@@ -85,7 +88,10 @@
                 <div class="footer__estudiantes">
                     <h3>Estudiantes:</h3>
                     <ul>
-                        <li>Brandon Gómez Carvajal</li>
+                        <li class="name__flex">
+                            <img class="star" src="img/star.png" alt="">
+                            <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
+                        </li>
                         <li>Jazmín Solano Serrano</li>
                         <li>Josue Leitón Nuñez</li>
                     </ul>

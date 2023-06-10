@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
-    <title>SinpeMóvil - Clientes</title>
+    <title>SinpeMóvil</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -26,42 +25,25 @@
             </div>            
         </div>
     </header>
-
-    <!-- Formulario CRUD - Banco -->
-    <section class="clientes">
-        <div class="clientes__contenedor">
-            <div>                
-                <form action="" class="clientes__formulario">
-                    <h2 class="clientes__heading">Clientes</h2>
-                    <div class="clientes__grid">
-                        <fieldset>
-                            <label for="cedula">Cedula: </label>
-                            <input class="clientes__input" type="text" name="" id="cedula">
     
-                            <label for="nombre">Nombre: </label>
-                            <input class="clientes__input" type="text" name="" id="nombre">
-    
-                            <label for="apellidos">Apellidos: </label>
-                            <input class="clientes__input" type="text" name="" id="apellidos">
-                            
-                            <label for="telefono">Telefono: </label>
-                            <input class="clientes__input" type="text" name="" id="telefono">
-                        </fieldset>
+    <!-- Formulario - Telefonos -->
+    <section class="telefonos">
+        <div class="telefonos__contenedor">
+            <form action="" class="telefonos__formulario">
+                <h2 class="telefonos__heading">Teléfonos</h2>
+                <fieldset>                        
+                    <label for="">Trabajo:</label>
+                    <input class="telefonos__input" type="number" name="" id="cedula">
+                    <label for="">Casa:</label>
+                    <input class="telefonos__input" type="number" name="" id="Dirección">
+                    <label for="">Universidad:</label>
+                    <input class="telefonos__input" type="number" name="" id="Dirección">
+                    </fieldset>
 
-                        <fieldset>
-                            <label for="direccion">Direccion: </label>
-                            <textarea class="clientes__input" id="direccion" cols="30" rows="17"></textarea>
-                        </fieldset>    
-                    </div>
-                    <div class="clientes__botones">
-                        <button class="clientes__boton" type="submit">Crear</button>
-                        <button class="clientes__boton" type="submit">Buscar</button>
-                        <button class="clientes__boton" type="submit">Editar</button>
-                        <button class="clientes__boton" type="submit">Eliminar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+                <div class="telefonos__botones">
+                    <button class="telefonos__boton" type="submit">Guardar Teléfonos</button>
+                </div>
+            </form>
     </section>
 
     <!-- FOOTER -->
@@ -78,7 +60,10 @@
                 <div class="footer__estudiantes">
                     <h3>Estudiantes:</h3>
                     <ul>
-                        <li>Brandon Gómez Carvajal</li>
+                        <li class="name__flex">
+                            <img class="star" src="img/star.png" alt="">
+                            <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
+                        </li>
                         <li>Jazmín Solano Serrano</li>
                         <li>Josue Leitón Nuñez</li>
                     </ul>

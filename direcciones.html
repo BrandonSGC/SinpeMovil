@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
-    <title>SinpeMóvil - Movimientos</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
+        <title>SinpeMóvil - Clientes</title>
+    </head>
 <body>
     <!-- HEADER -->
     <header class="header">
@@ -27,23 +27,26 @@
         </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="movimientos">
-        <div class="movimientos__contenedor">
-            <table class="movimientos__tabla">                
-                <h2 class="movimientos__heading">Movimientos</h2>
-                <p class="cuenta__numCuenta"> <span>Cuenta:</span> #712378</p>              
-                <tr>
-                  <th>Fecha</th>
-                  <th>Código</th>
-                  <th>Descripción</th>
-                  <th>Débito</th>
-                  <th>Crédito</th>
-                </tr>
-            </table>
-            <script src="./js/app.js"></script>
+    <!-- Formulario - Direcciones -->
+    <section class="direcciones">
+        <div class="direcciones__contenedor">
+            <form action="" class="direcciones__formulario">
+                <h2 class="direcciones__heading">Direcciones</h2>
+                <fieldset>                        
+                    <label for="">Trabajo:</label>
+                    <input class="direcciones__input" type="text" name="" id="cedula">
+                    <label for="">Casa:</label>
+                    <input class="direcciones__input" type="text" name="" id="Dirección">
+                    <label for="">Universidad:</label>
+                    <input class="direcciones__input" type="text" name="" id="Dirección">
+                    </fieldset>
+
+                <div class="direcciones__botones">
+                    <button class="direcciones__boton" type="submit">Guardar Direcciones</button>
+                </div>
+            </form>
         </div>
-    </main>
+    </section> 
 
     <!-- FOOTER -->
     <footer class="footer">

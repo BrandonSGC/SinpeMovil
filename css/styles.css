@@ -70,6 +70,24 @@ label {
     text-align: center;
 }
 
+.name__flex {
+    display: flex;
+    align-items: center;
+}
+.owner {
+    font-size: 2.7rem;
+    color:var(--azul_oscuro);
+    margin: 0;
+}
+.owner span {
+    color: red;
+}
+.star {
+    width: 2rem;
+    height: auto;
+    margin-right: 2rem;
+}
+
 /* LOGIN */
 .login {       
     width: 90%;
@@ -163,7 +181,7 @@ label {
 
 /* MAIN */
 .main {
-    margin: 5rem 0;
+    margin: 5rem 0;    
 }
 .main__texto {
     color: var(--grisClaro);
@@ -396,7 +414,7 @@ th, td {
 
 
   
-/* Formulario CRUD - Banco */
+/* Formulario - Banco */
 .banco__formulario {
     margin: 0 auto;
     background-color: var(--blanco);
@@ -457,17 +475,14 @@ th, td {
     .banco__botones {
         justify-content: space-evenly;
     }
-}
-
-@media (min-width: 768px) {
     .banco__boton {
-        padding: 1rem 2rem;
+        width: 50%;
     }
 }
 
 
-/* Formulario CRUD - Clientes */
-.clientes__formulario {
+/* Formulario - Crear Cliente */
+.crearCliente__formulario {
     margin: 0 auto;
     background-color: var(--blanco);
     border-radius: 1rem;
@@ -475,20 +490,16 @@ th, td {
 }
 
 @media (min-width: 768px) {
-    .clientes__formulario {
-        max-width: 100rem;
-    }
-    .clientes__grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .crearCliente__formulario {
+        max-width: 60rem;
     }
 }
 
-.clientes__heading {
+.crearCliente__heading {
     padding-top: 2rem;
 }
 
-.clientes__input {
+.crearCliente__input {
     border: none;
     font-size: 1.6rem;
     height: auto;
@@ -501,13 +512,19 @@ th, td {
     border-radius: 1rem;
 }
 
-.clientes__botones {
+.crearCliente__botones {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column;
 }
 
-.clientes__boton {
+@media (min-width: 510px) {
+    .crearCliente__botones {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.crearCliente__boton {
     padding: 1rem;
     color: var(--blanco);
     background-color: var(--azul);
@@ -518,21 +535,21 @@ th, td {
     margin-bottom: 2rem;
     cursor: pointer;
 }
-.clientes__boton:hover {
+.crearCliente__boton:hover {
     background-color: var(--azul_oscuro);
     transition: .3s;
 }
 
 @media (min-width: 768px) {
-    .clientes__botones {
+    .crearCliente__botones {
         justify-content: space-evenly;
     }
-    .clientes__boton {
+    .crearCliente__boton {
         padding: 1.6rem;
     }
 }
 
-/* Fromulario CRUD - Cuentas */
+/* Fromulario - Crear Cuenta */
 
 .crearCuenta__formulario {
     margin: 0 auto;
@@ -652,4 +669,163 @@ th, td {
 .cambio__boton:hover {
     background-color: var(--azul_oscuro);
     transition: .3s;
+}
+
+
+/* Formulario - Depositos*/
+.depositos__formulario {
+    margin: 0 auto;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 480px) {
+    .depositos__formulario {
+      max-width: 50rem;
+    }
+}
+
+.depositos__heading {
+    padding-top: 2rem;
+    color: var(--azul);
+}
+
+.depositos__input {
+    border: none;
+    font-size: 1.6rem;
+    height: auto;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--grisClaro);
+    color: var(--oscuro);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.depositos__botones {
+    display: flex;
+}
+
+.depositos__boton {
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: .6rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto 2rem auto;
+    width: 80%;
+}
+.depositos__boton:hover {
+    background-color: var(--azul_oscuro);
+    transition: .3s;
+}
+
+
+
+/* Dirección Clientes */
+
+.direcciones__formulario {
+    margin: 0 auto;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 480px) {
+    .direcciones__formulario {
+      max-width: 50rem;
+    }
+}
+
+.direcciones__heading {
+    padding-top: 2rem;
+    color: var(--azul);
+}
+
+.direcciones__input {
+    border: none;
+    font-size: 1.6rem;
+    height: auto;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--grisClaro);
+    color: var(--oscuro);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.direcciones__botones {
+    display: flex;
+}
+
+.direcciones__boton {
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: .6rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto 2rem auto;
+    width: 80%;
+}
+
+/* Teléfonos Clientes */
+
+.telefonos__formulario {
+    margin: 0 auto;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 480px) {
+    .telefonos__formulario {
+      max-width: 50rem;
+    }
+}
+
+.telefonos__heading {
+    padding-top: 2rem;
+    color: var(--azul);
+}
+
+.telefonos__input {
+    border: none;
+    font-size: 1.6rem;
+    height: auto;
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--grisClaro);
+    color: var(--oscuro);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.telefonos__botones {
+    display: flex;
+}
+
+.telefonos__boton {
+    display: block;
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--azul);
+    text-align: center;
+    border-radius: .6rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto 2rem auto;
+    width: 80%;
 }

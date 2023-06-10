@@ -34,26 +34,18 @@
                 <form action="" class="banco__formulario">
                     <h2 class="banco__heading">Banco</h2>
                     <fieldset>
-                        <!-- Eliminar campo de codigo -->
-                        <label for="codigo">Codigo: </label>
-                        <input class="banco__input" type="text" name="" id="codigo">
-
                         <label for="nombre">Nombre: </label>
-                        <input class="banco__input" type="text" name="" id="nombre">
+                        <input class="banco__input" type="text" id="nombreBanco">
 
                         <label for="estado">Estado: </label>
-                        <select class="banco__input" name="" id="estado">
+                        <select class="banco__input" id="estado">
                             <option value="A">Activo</option>
                             <option value="I">Inactivo</option>
                         </select>
                     </fieldset>
                     
-
                     <div class="banco__botones">
-                        <button class="banco__boton" type="submit">Crear</button>
-                        <button class="banco__boton" type="submit">Buscar</button>
-                        <button class="banco__boton" type="submit">Editar</button>
-                        <button class="banco__boton" type="submit">Eliminar</button>
+                        <button class="banco__boton" type="submit">Guardar Banco</button>
                     </div>
                 </form>
                 
@@ -75,7 +67,10 @@
                 <div class="footer__estudiantes">
                     <h3>Estudiantes:</h3>
                     <ul>
-                        <li>Brandon Gómez Carvajal</li>
+                        <li class="name__flex">
+                            <img class="star" src="img/star.png" alt="">
+                            <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
+                        </li>
                         <li>Jazmín Solano Serrano</li>
                         <li>Josue Leitón Nuñez</li>
                     </ul>
