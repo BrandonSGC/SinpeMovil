@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="../frontend/img/SinpeMovilLogo.png">
     <title>SinpeMóvil - Banco</title>
 </head>
 <body>
@@ -31,16 +31,16 @@
     <section class="banco">
         <div class="banco__contenedor">
           <div>                
-            <form action="/formulario" method="post" class="banco__formulario">
+            <form action="/guardar-banco" method="post" class="banco__formulario">
               <h2 class="banco__heading">Banco</h2>
               <fieldset>
                 <label for="nombre">Nombre:</label>
-                <input class="banco__input" type="text" id="nombreBanco">
+                <input class="banco__input" type="text" name="nombreBanco" id="nombreBanco">
       
                 <label for="estado">Estado: </label>
-                <select class="banco__input" id="estado">
+                <select class="banco__input" name="estado" id="estado">
                   <option value="A">Activo</option>
-                  <option value="I">Inactivo</option>
+                  <option value="I">Inactivo</option>                  
                 </select>
               </fieldset>
               
