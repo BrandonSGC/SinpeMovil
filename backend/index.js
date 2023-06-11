@@ -8,6 +8,7 @@ const port = 3000;
 const bodyParser = require('body-parser');
 
 const { insertarBanco } = require('./database.js');
+const { insertarTipoCambio } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -30,24 +31,56 @@ app.get('/', (req, res) => {
 app.get('/banco', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/banco.html'));
 });
-
 // Recibir la informacion del formulario frontend e ingresarlo a la base de datos.
 app.post('/guardar-banco', async (req, res) => {
   
-  // Aquí puedes acceder a los datos enviados desde el formulario
+  // Accedemos a los datos enviados desde el formulario
   // mediante el atributo name de los inputs.
   const nombreBanco = req.body.nombreBanco;
   const estado = req.body.estado;
 
   await insertarBanco(nombreBanco, estado);
   // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
-  res.send('Datos del formulario recibidos y procesados correctamente.');
+  res.send('Datos recibidos y procesados correctamente.');
 
 });
 
 
+// Ruta para mostrar crearCliente.html.
+app.get('/crearCliente', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/crearCliente.html'));
+});
 
-// Resto del código...
+
+
+// Ruta para mostrar tipoCambio.html.
+app.get('/tipoCambio', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/tipoCambio.html'));
+});
+app.post('/guardar-tipo-cambio', async (req, res) => {
+  
+  // Accedemos a los datos enviados desde el formulario
+  // mediante el atributo name de los inputs.
+  const fechaString = req.body.fecha;
+  // Obtener los componentes de la fecha
+  const [year, month, day] = fechaString.split("-")
+  // Crear un objeto Date válido para SQL Server
+  const fecha = new Date(year, month - 1, day);
+
+  const valor = req.body.valor;
+
+  await insertarTipoCambio(fecha, valor);
+  // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
+  res.send(`Datos recibidos y procesados correctamente`);
+});
+
+app.get('/crearCuenta', async (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/crearCuenta.html'));
+});
+app.post('/crear-cuenta-cliente', async (req, res) => {
+  
+});
+
 
 // Iniciar el servidor
 app.listen(port, () => {

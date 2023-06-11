@@ -28,12 +28,30 @@ async function insertarBanco(nombre, estado) {
   
       pool.close();
     } catch (error) {
-      console.error('Error al insertar los datos en la tabla Banco:', error);
-      throw error; // Manejar o propagar el error según tus necesidades
+      console.error('Error al insertar los datos del Banco:', error);
+      throw error;
+    }
+}
+
+// Guardar tipo de cambio.
+async function insertarTipoCambio(fecha, valor) {
+    try {
+      const pool = await sql.connect(config);
+
+      await pool.request()
+        .input('fecha', sql.Date, fecha)
+        .input('valor', sql.Int, valor)
+        .query('INSERT INTO Tipo_Cambio (fecha, cambio) VALUES (@fecha, @valor)');
+  
+      pool.close();
+    } catch (error) {
+      console.error('Error al insertar los datos del Tipo de Cambio:', error);
+      throw error;
     }
 }
   
 // Exportamos la funcion insertarBanco
 module.exports = {
     insertarBanco,
+    insertarTipoCambio,
 };
