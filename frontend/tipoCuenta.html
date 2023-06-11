@@ -28,18 +28,18 @@
     </header>
 
     <!-- Formulario CRUD - Tipo de Moneda -->
-    <section class="moneda">
-        <div class="moneda__contenedor">
+    <section class="tipoCuenta">
+        <div class="tipoCuenta__contenedor">
           <div>                
-            <form action="/guardar-moneda" method="post" class="moneda__formulario">
-              <h2 class="moneda__heading">Moneda</h2>
+            <form action="/guardar-tipoCuenta" method="post" class="tipoCuenta__formulario">
+              <h2 class="tipoCuenta__heading">Tipo de Cuenta</h2>
               <fieldset>
-                <label for="nombreMoneda">Nombre de la moneda:</label>
-                <input class="moneda__input" type="text" name="nombreMoneda" id="nombreMoneda">
+                <label for="tipoCuenta">Tipo:</label>
+                <input class="tipoCuenta__input" type="text" name="tipoCuenta" id="tipoCuenta" placeholder="Ejemplo:  Débito">
               </fieldset>
               
-              <div class="moneda__botones">
-                <button class="moneda__boton" type="submit">Guardar Moneda</button>
+              <div class="tipoCuenta__botones">
+                <button class="tipoCuenta__boton" type="submit">Guardar tipo de moneda</button>
               </div>
             </form>
           </div>

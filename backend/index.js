@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const { insertarBanco } = require('./database.js');
 const { insertarTipoCambio } = require('./database.js');
 const { insertarMoneda } = require('./database.js');
+const { insertarTipoCuenta } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -95,6 +96,19 @@ app.post('/guardar-moneda', async (req, res) => {
   res.send('Datos recibidos y procesados correctamente.');
 });
 
+
+app.get('/tipoCuenta', async (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/tipoCuenta.html'));
+});
+app.post('/guardar-tipoCuenta', async (req, res) => {
+  // Accedemos a los datos enviados desde el formulario
+  // mediante el atributo name de los inputs.
+  const tipoCuenta = req.body.tipoCuenta;
+
+  await insertarTipoCuenta(tipoCuenta);
+  // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
+  res.send('Datos recibidos y procesados correctamente.');
+});
 
 
 // Iniciar el servidor
