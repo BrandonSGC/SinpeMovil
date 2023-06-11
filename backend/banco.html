@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
     <title>SinpeMóvil - Banco</title>
 </head>
@@ -30,28 +30,30 @@
     <!-- Formulario CRUD - Banco -->
     <section class="banco">
         <div class="banco__contenedor">
-            <div>                
-                <form action="" class="banco__formulario">
-                    <h2 class="banco__heading">Banco</h2>
-                    <fieldset>
-                        <label for="nombre">Nombre: </label>
-                        <input class="banco__input" type="text" id="nombreBanco">
+          <div>                
+            <form action="/formulario" method="post" class="banco__formulario">
+              <h2 class="banco__heading">Banco</h2>
+              <fieldset>
+                <label for="nombre">Nombre:</label>
+                <input class="banco__input" type="text" id="nombreBanco">
+      
+                <label for="estado">Estado: </label>
+                <select class="banco__input" id="estado">
+                  <option value="A">Activo</option>
+                  <option value="I">Inactivo</option>
+                </select>
+              </fieldset>
+              
+              <div class="banco__botones">
+                <button class="banco__boton" type="submit">Guardar Banco</button>
+              </div>
 
-                        <label for="estado">Estado: </label>
-                        <select class="banco__input" id="estado">
-                            <option value="A">Activo</option>
-                            <option value="I">Inactivo</option>
-                        </select>
-                    </fieldset>
-                    
-                    <div class="banco__botones">
-                        <button class="banco__boton" type="submit">Guardar Banco</button>
-                    </div>
-                </form>
-                
-            </div>
+              <script src="js/crearBanco.js"></script>
+            </form>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
     <!-- FOOTER -->
     <footer class="footer">
