@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const { insertarBanco } = require('./database.js');
 const { insertarTipoCambio } = require('./database.js');
+const { insertarMoneda } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -80,6 +81,20 @@ app.get('/crearCuenta', async (req, res) => {
 app.post('/crear-cuenta-cliente', async (req, res) => {
   
 });
+
+app.get('/moneda', async (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/moneda.html'));
+});
+app.post('/guardar-moneda', async (req, res) => {
+  // Accedemos a los datos enviados desde el formulario
+  // mediante el atributo name de los inputs.
+  const nombreMoneda = req.body.nombreMoneda;
+
+  await insertarMoneda(nombreMoneda);
+  // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
+  res.send('Datos recibidos y procesados correctamente.');
+});
+
 
 
 // Iniciar el servidor

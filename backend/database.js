@@ -50,8 +50,25 @@ async function insertarTipoCambio(fecha, valor) {
     }
 }
   
+// Guardar tipo de cambio.
+async function insertarMoneda(nombreMoneda) {
+  try {
+    const pool = await sql.connect(config);
+
+    await pool.request()
+      .input('nombreMoneda', sql.VarChar(30), nombreMoneda)
+      .query('INSERT INTO Moneda (descripcion) VALUES (@nombreMoneda)');
+
+    pool.close();
+  } catch (error) {
+    console.error('Error al insertar los datos de la moneda:', error);
+    throw error;
+  }
+}
+
 // Exportamos la funcion insertarBanco
 module.exports = {
     insertarBanco,
     insertarTipoCambio,
+    insertarMoneda,
 };

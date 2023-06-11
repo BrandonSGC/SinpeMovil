@@ -28,24 +28,18 @@
     </header>
 
     <!-- Formulario CRUD - Banco -->
-    <section class="banco">
-        <div class="banco__contenedor">
+    <section class="moneda">
+        <div class="moneda__contenedor">
           <div>                
-            <form action="/guardar-banco" method="post" class="banco__formulario">
-              <h2 class="banco__heading">Banco</h2>
+            <form action="/guardar-moneda" method="post" class="moneda__formulario">
+              <h2 class="moneda__heading">Moneda</h2>
               <fieldset>
-                <label for="nombre">Nombre:</label>
-                <input class="banco__input" type="text" name="nombreBanco" id="nombreBanco">
-      
-                <label for="estado">Estado: </label>
-                <select class="banco__input" name="estado" id="estado">
-                  <option value="A">Activo</option>
-                  <option value="I">Inactivo</option>                  
-                </select>
+                <label for="nombreMoneda">Nombre de la moneda:</label>
+                <input class="moneda__input" type="text" name="nombreMoneda" id="nombreMoneda">
               </fieldset>
               
-              <div class="banco__botones">
-                <button class="banco__boton" type="submit">Guardar Banco</button>
+              <div class="moneda__botones">
+                <button class="moneda__boton" type="submit">Guardar Moneda</button>
               </div>
             </form>
           </div>
