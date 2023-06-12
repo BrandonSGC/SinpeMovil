@@ -1,4 +1,3 @@
-
 // Funciones para cargar los datos de la base de datos a los combos.
 function cargarBancos() {
     fetch('/obtenerBancos')
@@ -45,6 +44,24 @@ function cargarTipoMoneda(){
             option.textContent = element.descripcion;
             option.value = element.descripcion;
             selectTipoMoneda.appendChild(option);
+        });        
+    })
+    .catch(error => {
+        console.error(error);
+    });
+}
+
+
+function cargarCedulaCliente(){
+    fetch('/obtenerCedulaCliente')
+    .then(response => response.json())
+    .then(cedulaCliente => {
+        const selectCedulaCliente = document.querySelector('#cedulaCliente');
+        cedulaCliente.forEach(element => {        
+            const option = document.createElement('option');
+            option.textContent = element.cedula;
+            option.value = element.cedula;
+            selectCedulaCliente.appendChild(option);
         });
         
     })
@@ -53,7 +70,9 @@ function cargarTipoMoneda(){
     });
 }
 
+
 // Llamamos a las funciones.
 cargarBancos();
 cargarTiposCuenta();
 cargarTipoMoneda();
+cargarCedulaCliente();

@@ -1,7 +1,6 @@
+// const btnCrearCliente = document.querySelector('#crearCliente');
 
-const btnCrearCliente = document.querySelector('#crearCliente');
-
-btnCrearCliente.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    alert('Debe ingresar los telefonos y las direcciones.');
-});
+// btnCrearCliente.addEventListener('click', (evt) => {
+//     evt.preventDefault();
+//     alert('Debe ingresar los telefonos y las direcciones.');
+// });

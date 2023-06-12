@@ -79,6 +79,23 @@ async function insertarTipoCuenta(tipoCuenta) {
   }
 }
 
+async function insertarCliente(cedula, nombre, primerApellido, segundoApellido) {
+  try {
+    const pool = await sql.connect(config);
+
+    await pool.request()
+      .input('cedula', sql.Int, cedula)
+      .input('nombre', sql.VarChar(30), nombre)
+      .input('primerApellido', sql.VarChar(30), primerApellido)
+      .input('segundoApellido', sql.VarChar(30), segundoApellido)
+      .query('INSERT INTO Clientes (cedula, nombre, apellido1, apellido2) VALUES (@cedula,@nombre, @primerApellido, @segundoApellido)');      
+    pool.close();
+  } catch (error) {
+    console.error('Error al insertar los datos del tipo de cuenta:', error);
+    throw error;
+  }
+}
+
 
 // Función para obtener los registros de la tabla Banco
 async function obtenerBancos() {
@@ -118,6 +135,18 @@ async function obtenerTipoMoneda() {
   }
 }
 
+async function obtenerCedulaCliente() {
+  try {
+    await sql.connect(config);
+    const result = await sql.query('SELECT * FROM Clientes');
+    return result.recordset;
+  } catch (error) {
+    throw error;
+  } finally {
+    sql.close();
+  }
+}
+
 
 // Exportamos las funciones
 module.exports = {
@@ -125,7 +154,9 @@ module.exports = {
     insertarTipoCambio,
     insertarMoneda,
     insertarTipoCuenta,
+    insertarCliente,
     obtenerBancos,
     obtenerTiposCuentas,
     obtenerTipoMoneda,
+    obtenerCedulaCliente,
 };

@@ -11,9 +11,11 @@ const { insertarBanco } = require('./database.js');
 const { insertarTipoCambio } = require('./database.js');
 const { insertarMoneda } = require('./database.js');
 const { insertarTipoCuenta } = require('./database.js');
+const { insertarCliente } = require('./database.js');
 const { obtenerBancos } = require('./database.js');
 const { obtenerTiposCuentas } = require('./database.js');
 const { obtenerTipoMoneda } = require('./database.js');
+const { obtenerCedulaCliente } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -45,8 +47,8 @@ app.post('/guardar-banco', async (req, res) => {
   const estado = req.body.estado;
 
   await insertarBanco(nombreBanco, estado);
-  // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
-  res.send('Datos recibidos y procesados correctamente.');
+  // Envía una respuesta al cliente.
+  res.send('Datos recibidos y guardados correctamente.');
 
 });
 
@@ -55,6 +57,18 @@ app.post('/guardar-banco', async (req, res) => {
 app.get('/crearCliente', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/crearCliente.html'));
 });
+app.post('/crearCliente', async (req, res) => {
+  // Accedemos a los datos enviados desde el formulario
+  // mediante el atributo name de los inputs.
+  const cedula = req.body.cedula;
+  const nombre = req.body.nombre;
+  const primerApellido = req.body.primerApellido;
+  const segundoApellido = req.body.segundoApellido;
+  await insertarCliente(cedula, nombre, primerApellido, segundoApellido);
+  // Envía una respuesta al cliente.
+  res.send('Datos recibidos y guardados correctamente.');
+});
+
 
 
 
@@ -138,6 +152,18 @@ app.post('/guardar-tipoCuenta', async (req, res) => {
   res.send('Datos recibidos y procesados correctamente.');
 });
 
+
+app.get('/obtenerCedulaCliente', async (req, res) => {
+  try {
+    // Obtenemos los datos de los bancos
+    const cedulaCliente = await obtenerCedulaCliente();
+    // Enviamos el array de objetos en JSON.
+    res.json(cedulaCliente);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al obtener los datos del cliente.');
+  }
+});
 
 // Iniciar el servidor
 app.listen(port, () => {
