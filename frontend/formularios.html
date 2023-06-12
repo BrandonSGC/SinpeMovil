@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="./img/SinpeMovilLogo.png">
-    <title>SinpeMóvil - Cuentas</title>
+    <link rel="shortcuticon" href="./img/SinpeMovilLogo.png">
+    <title>SinpeMóvil - Inicio</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -28,48 +28,22 @@
         </div>
     </header>
 
-    <!-- Formulario CRUD - Cuenta -->
-    <section class="crearCuenta">
-        <div class="crearCuenta__contenedor">
-            <div>                
-                <form action="" class="crearCuenta__formulario">
-                    <h2 class="crearCuenta__heading">Cuenta</h2>
-                    <fieldset>
-                        <label for="banco">Seleccionar Banco: </label>
-                        <select class="crearCuenta__input" id="bancos">
-                            <option value="">--Seleccionar Banco--</option>
-                        </select>                        
-
-                        <label for="tipoCuenta">Tipo de cuenta: </label>                        
-                        <select class="crearCuenta__input" id="tipoCuenta">
-                            <option value="">--Seleccionar Tipo de Cuenta--</option>
-                        </select>
-
-                        <label for="tipoMoneda">Tipo de moneda: </label>                        
-                        <select class="crearCuenta__input" id="tipoMoneda">
-                            <option value="">--Seleccionar Tipo de Moneda--</option>
-                        </select>
-
-                        <label for="cedulaCliente">Cedula del Cliente: </label>
-                        <select class="crearCuenta__input" id="cedulaCliente">
-                            <option value="">--Seleccionar Cedula--</option>                            
-                        </select>
-
-                        <label for="num_cuenta">Número de Cuenta: </label>
-                        <input class="crearCuenta__input" type="number" id="num_cuenta">
-
-                        <label for="saldoInicial">Saldo inicial: </label>
-                        <input class="crearCuenta__input" type="number" id="saldoInicial">
-                    </fieldset> 
-
-                    <div class="crearCuenta__botones">
-                        <button class="crearCuenta__boton" type="submit">Crear Cuenta</button>                        
-                    </div>
-                    <script src="js/crearCuenta.js"></script>
-                </form>
+    <!-- MAIN -->
+    <main class="formularios">
+        <div class="formularios__contenedor">            
+            <h1 class="formularios__heading">Ingresar Datos del Sistema</h1>
+            <div class="formularios__botones">                    
+                <a href="./banco.html" class="formularios__boton">Ingresar Bancos</a>
+                <a href="./moneda.html" class="formularios__boton">Ingresar Tipo de Moneda</a>
+                <a href="./tipoCambio.html" class="formularios__boton">Ingresar Tipo de Cambio</a>
+                <a href="./tipoCuenta.html" class="formularios__boton">Ingresar Tipo de Cuenta</a>
+                <a href="./crearCliente.html" class="formularios__boton">Crear Cliente</a>
+                <a href="./crearCuenta.html" class="formularios__boton">Crear Cuenta</a>
+                <a href="./depositos.html" class="formularios__boton">Depositos</a>
+                <a href="./transferir.html" class="formularios__boton">Transferir</a>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
