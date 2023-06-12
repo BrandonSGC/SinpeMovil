@@ -35,27 +35,23 @@
                     <h2 class="crearCuenta__heading">Cuenta</h2>
                     <fieldset>
                         <label for="banco">Seleccionar Banco: </label>
-                        <select class="crearCuenta__input" id="banco">
-                            <option value="BCR">Banco de Costa Rica (BCR)</option>
-                            <option value="BN">Banco Nacional (BN)</option>
+                        <select class="crearCuenta__input" id="bancos">
+                            <option value="">--Seleccionar Banco--</option>
                         </select>                        
 
-                        <label for="tipo_cuenta">Tipo de cuenta: </label>                        
-                        <select class="crearCuenta__input" id="estado">
-                            <option value="BCR">Débito</option>
-                            <option value="BN">Crédito</option>
+                        <label for="tipoCuenta">Tipo de cuenta: </label>                        
+                        <select class="crearCuenta__input" id="tipoCuenta">
+                            <option value="">--Seleccionar Tipo de Cuenta--</option>
                         </select>
 
-                        <label for="tipo_moneda">Tipo de moneda: </label>                        
-                        <select class="crearCuenta__input" id="tipo_moneda">
-                            <option value="BCR">Colones</option>
-                            <option value="BN">Dolares</option>
+                        <label for="tipoMoneda">Tipo de moneda: </label>                        
+                        <select class="crearCuenta__input" id="tipoMoneda">
+                            <option value="">--Seleccionar Tipo de Moneda--</option>
                         </select>
 
                         <label for="cedulaCliente">Cedula del Cliente: </label>
                         <select class="crearCuenta__input" id="cedulaCliente">
-                            <option value="">117970823</option>
-                            <option value="">134342342</option>
+                            <option value="">--Seleccionar Cedula--</option>                            
                         </select>
 
                         <label for="num_cuenta">Número de Cuenta: </label>
@@ -68,8 +64,8 @@
                     <div class="crearCuenta__botones">
                         <button class="crearCuenta__boton" type="submit">Crear Cuenta</button>                        
                     </div>
+                    <script src="js/crearCuenta.js"></script>
                 </form>
-                
             </div>
         </div>
     </section>

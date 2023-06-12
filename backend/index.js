@@ -11,6 +11,9 @@ const { insertarBanco } = require('./database.js');
 const { insertarTipoCambio } = require('./database.js');
 const { insertarMoneda } = require('./database.js');
 const { insertarTipoCuenta } = require('./database.js');
+const { obtenerBancos } = require('./database.js');
+const { obtenerTiposCuentas } = require('./database.js');
+const { obtenerTipoMoneda } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -76,29 +79,54 @@ app.post('/guardar-tipo-cambio', async (req, res) => {
   res.send(`Datos recibidos y procesados correctamente`);
 });
 
-app.get('/crearCuenta', async (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/crearCuenta.html'));
+app.get('/obtenerBancos', async (req, res) => {  
+  try {
+    // Obtenemos los datos de los bancos
+    const bancos = await obtenerBancos();     
+    // Enviamos el array de objetos en JSON.
+    res.json(bancos);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al obtener los datos.');
+  }
 });
-app.post('/crear-cuenta-cliente', async (req, res) => {
+app.post('/creaCuentaCliente', async (req, res) => {
   
 });
 
-app.get('/moneda', async (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/moneda.html'));
+
+app.get('/obtenerMoneda', async (req, res) => {
+  try {
+    // Obtenemos los datos de los bancos
+    const tipoMoneda = await obtenerTipoMoneda();    
+    // Enviamos el array de objetos en JSON.
+    res.json(tipoMoneda);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al obtener los datos.');
+  }
 });
 app.post('/guardar-moneda', async (req, res) => {
   // Accedemos a los datos enviados desde el formulario
   // mediante el atributo name de los inputs.
   const nombreMoneda = req.body.nombreMoneda;
-
   await insertarMoneda(nombreMoneda);
   // Envía una respuesta al cliente, por ejemplo, un mensaje de éxito
   res.send('Datos recibidos y procesados correctamente.');
 });
 
 
-app.get('/tipoCuenta', async (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/tipoCuenta.html'));
+app.get('/tipoCuentas', async (req, res) => {
+  try {
+    // Obtenemos los datos de los bancos
+    const tipoCuentas = await obtenerTiposCuentas();
+    // Enviamos el array de objetos en JSON.
+    res.json(tipoCuentas);
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al obtener los datos.');
+  }
 });
 app.post('/guardar-tipoCuenta', async (req, res) => {
   // Accedemos a los datos enviados desde el formulario

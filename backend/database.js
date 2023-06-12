@@ -32,7 +32,6 @@ async function insertarBanco(nombre, estado) {
       throw error;
     }
 }
-
 // Guardar tipo de cambio.
 async function insertarTipoCambio(fecha, valor) {
     try {
@@ -49,7 +48,6 @@ async function insertarTipoCambio(fecha, valor) {
       throw error;
     }
 }
-  
 // Guardar tipo de cambio.
 async function insertarMoneda(nombreMoneda) {
   try {
@@ -65,8 +63,6 @@ async function insertarMoneda(nombreMoneda) {
     throw error;
   }
 }
-
-
 // Guardar tipo de cambio.
 async function insertarTipoCuenta(tipoCuenta) {
   try {
@@ -83,10 +79,53 @@ async function insertarTipoCuenta(tipoCuenta) {
   }
 }
 
-// Exportamos la funcion insertarBanco
+
+// Función para obtener los registros de la tabla Banco
+async function obtenerBancos() {
+  try {
+    await sql.connect(config);
+    const result = await sql.query('SELECT * FROM Banco');
+    return result.recordset;
+  } catch (error) {
+    throw error;
+  } finally {
+    sql.close();
+  }
+}
+
+async function obtenerTiposCuentas() {
+  try {
+    await sql.connect(config);
+    const result = await sql.query('SELECT * FROM Cuentas');
+    return result.recordset;
+  } catch (error) {
+    throw error;
+  } finally {
+    sql.close();
+  }
+}
+
+
+async function obtenerTipoMoneda() {
+  try {
+    await sql.connect(config);
+    const result = await sql.query('SELECT * FROM Moneda');
+    return result.recordset;
+  } catch (error) {
+    throw error;
+  } finally {
+    sql.close();
+  }
+}
+
+
+// Exportamos las funciones
 module.exports = {
     insertarBanco,
     insertarTipoCambio,
     insertarMoneda,
     insertarTipoCuenta,
+    obtenerBancos,
+    obtenerTiposCuentas,
+    obtenerTipoMoneda,
 };
