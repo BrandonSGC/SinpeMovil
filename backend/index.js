@@ -120,14 +120,6 @@ app.post('/creaCuentaCliente', async (req, res) => {
   // Llama a la función obtenerIdCliente del archivo database.js
   const id_cliente = await obtenerIdCliente(cedula);
 
-  console.log(id_banco)
-  console.log(id_cliente)
-  console.log(cedula)
-  console.log(cod_cuenta)
-  console.log(id_moneda)
-  console.log(num_cuenta)
-  console.log(saldo)
-
   // Si no se encontró un cliente con la cédula proporcionada, devuelve un error
   if (!id_cliente) {
     res.status(400).send('No se encontró un cliente con la cédula proporcionada');
