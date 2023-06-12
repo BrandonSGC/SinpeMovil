@@ -12,10 +12,13 @@ const { insertarTipoCambio } = require('./database.js');
 const { insertarMoneda } = require('./database.js');
 const { insertarTipoCuenta } = require('./database.js');
 const { insertarCliente } = require('./database.js');
+const { insertarCuentaCliente } = require('./database.js');
+
 const { obtenerBancos } = require('./database.js');
 const { obtenerTiposCuentas } = require('./database.js');
 const { obtenerTipoMoneda } = require('./database.js');
 const { obtenerCedulaCliente } = require('./database.js');
+const { obtenerIdCliente } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -105,7 +108,35 @@ app.get('/obtenerBancos', async (req, res) => {
   }
 });
 app.post('/creaCuentaCliente', async (req, res) => {
+  // Accedemos a los datos enviados desde el formulario
+  // mediante el atributo name de los inputs.
+  const id_banco = req.body.banco;
+  const cedula = req.body.cedulaCliente;
+  const cod_cuenta = req.body.tipoCuenta;
+  const id_moneda = req.body.tipoMoneda;
+  const num_cuenta = req.body.num_cuenta;
+  const saldo = req.body.saldoInicial;
+
+  // Llama a la función obtenerIdCliente del archivo database.js
+  const id_cliente = await obtenerIdCliente(cedula);
+
+  console.log(id_banco)
+  console.log(id_cliente)
+  console.log(cedula)
+  console.log(cod_cuenta)
+  console.log(id_moneda)
+  console.log(num_cuenta)
+  console.log(saldo)
+
+  // Si no se encontró un cliente con la cédula proporcionada, devuelve un error
+  if (!id_cliente) {
+    res.status(400).send('No se encontró un cliente con la cédula proporcionada');
+    return;
+  }
   
+  await insertarCuentaCliente(id_banco, id_cliente, cedula, cod_cuenta, id_moneda, num_cuenta, saldo);
+  // Envía una respuesta al cliente.
+  res.send('Datos recibidos y guardados correctamente.');
 });
 
 

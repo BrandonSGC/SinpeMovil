@@ -32,34 +32,34 @@
     <section class="crearCuenta">
         <div class="crearCuenta__contenedor">
             <div>                
-                <form action="" class="crearCuenta__formulario">
+                <form action="/creaCuentaCliente" method="post" class="crearCuenta__formulario">
                     <h2 class="crearCuenta__heading">Cuenta</h2>
                     <fieldset>
                         <label for="banco">Seleccionar Banco: </label>
-                        <select class="crearCuenta__input" id="bancos">
+                        <select class="crearCuenta__input" name="banco" id="banco">
                             <option value="">--Seleccionar Banco--</option>
                         </select>                        
 
                         <label for="tipoCuenta">Tipo de cuenta: </label>                        
-                        <select class="crearCuenta__input" id="tipoCuenta">
+                        <select class="crearCuenta__input" name="tipoCuenta" id="tipoCuenta">
                             <option value="">--Seleccionar Tipo de Cuenta--</option>
                         </select>
 
                         <label for="tipoMoneda">Tipo de moneda: </label>                        
-                        <select class="crearCuenta__input" id="tipoMoneda">
+                        <select class="crearCuenta__input" name="tipoMoneda" id="tipoMoneda">
                             <option value="">--Seleccionar Tipo de Moneda--</option>
                         </select>
 
                         <label for="cedulaCliente">Cedula del Cliente: </label>
-                        <select class="crearCuenta__input" id="cedulaCliente">
+                        <select class="crearCuenta__input" name="cedulaCliente" id="cedulaCliente">
                             <option value="">--Seleccionar Cedula--</option>                            
                         </select>
 
                         <label for="num_cuenta">Número de Cuenta: </label>
-                        <input class="crearCuenta__input" type="number" id="num_cuenta">
+                        <input class="crearCuenta__input" name="num_cuenta" type="number" id="num_cuenta">
 
                         <label for="saldoInicial">Saldo inicial: </label>
-                        <input class="crearCuenta__input" type="number" id="saldoInicial">
+                        <input class="crearCuenta__input" name="saldoInicial" type="number" id="saldoInicial">
                     </fieldset> 
 
                     <div class="crearCuenta__botones">

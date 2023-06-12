@@ -97,6 +97,27 @@ async function insertarCliente(cedula, nombre, primerApellido, segundoApellido) 
 }
 
 
+async function insertarCuentaCliente(id_banco, id_cliente, cedula, cod_cuenta, id_moneda, num_cuenta, saldo) {
+  try {
+    const pool = await sql.connect(config);
+
+    await pool.request()
+      .input('id_banco', sql.Int, id_banco)
+      .input('id_cliente', sql.Int, id_cliente)
+      .input('cedula', sql.Int, cedula)
+      .input('cod_cuenta', sql.Int, cod_cuenta)
+      .input('id_moneda', sql.Int, id_moneda)
+      .input('num_cuenta', sql.Int, num_cuenta)
+      .input('saldo', sql.Int, saldo)
+      .query('INSERT INTO Clientes_Cuentas (id_banco, id_cliente, cedula, cod_cuenta, id_moneda, num_cuenta, saldo) VALUES (@id_banco, @id_cliente, @cedula, @cod_cuenta, @id_moneda, @num_cuenta, @saldo)');      
+    pool.close();
+  } catch (error) {
+    console.error('Error al insertar los datos del tipo de cuenta:', error);
+    throw error;
+  }
+}
+
+
 // Función para obtener los registros de la tabla Banco
 async function obtenerBancos() {
   try {
@@ -147,6 +168,27 @@ async function obtenerCedulaCliente() {
   }
 }
 
+async function obtenerIdCliente(cedula) {
+  try {
+    const pool = await sql.connect(config);
+
+    const result = await pool
+      .request()
+      .input('cedula', sql.Int, cedula)
+      .query('SELECT id FROM Clientes WHERE cedula = @cedula');
+    pool.close();
+
+    if (result.recordset.length > 0) {
+      return result.recordset[0].id;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error('Error al obtener el id del cliente:', error);
+    throw error;
+  }
+}
+
 
 // Exportamos las funciones
 module.exports = {
@@ -155,8 +197,10 @@ module.exports = {
     insertarMoneda,
     insertarTipoCuenta,
     insertarCliente,
+    insertarCuentaCliente,
     obtenerBancos,
     obtenerTiposCuentas,
     obtenerTipoMoneda,
     obtenerCedulaCliente,
+    obtenerIdCliente,
 };

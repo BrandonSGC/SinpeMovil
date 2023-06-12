@@ -3,11 +3,11 @@ function cargarBancos() {
     fetch('/obtenerBancos')
     .then(response => response.json())
     .then(bancos => {
-        const selectBancos = document.querySelector('#bancos');
+        const selectBancos = document.querySelector('#banco');
         bancos.forEach(element => {        
             const option = document.createElement('option');
             option.textContent = element.nombre;
-            option.value = element.nombre;
+            option.value = element.codigo;
             selectBancos.appendChild(option);
         });        
     })
@@ -24,7 +24,7 @@ function cargarTiposCuenta() {
         tipoCuentas.forEach(element => {        
             const option = document.createElement('option');
             option.textContent = element.descripcion;
-            option.value = element.descripcion;
+            option.value = element.cod_cuenta;
             selectTipoCuenta.appendChild(option);
         });
         
@@ -42,7 +42,7 @@ function cargarTipoMoneda(){
         tipoMoneda.forEach(element => {        
             const option = document.createElement('option');
             option.textContent = element.descripcion;
-            option.value = element.descripcion;
+            option.value = element.id_moneda;
             selectTipoMoneda.appendChild(option);
         });        
     })
@@ -69,7 +69,6 @@ function cargarCedulaCliente(){
         console.error(error);
     });
 }
-
 
 // Llamamos a las funciones.
 cargarBancos();
