@@ -190,6 +190,47 @@ async function obtenerIdCliente(cedula) {
 }
 
 
+async function obtenerSaldoCuenta(numCuenta) {
+  try {
+    const pool = await sql.connect(config);
+
+    const result = await pool
+      .request()
+      .input('numCuenta', sql.Int, numCuenta)
+      .query('SELECT saldo FROM Clientes_Cuentas WHERE num_cuenta = @numCuenta;');
+
+    pool.close();
+
+    if (result.recordset.length > 0) {
+      return result.recordset[0].saldo;
+    } else {
+      throw new Error('Cuenta no encontrada');
+    }
+  } catch (error) {
+    console.error('Error al obtener el saldo de la cuenta:', error);
+    throw error;
+  }
+}
+
+
+async function actualizarSaldoCuenta(numCuenta, nuevoSaldo) {
+  try {
+    const pool = await sql.connect(config);
+
+    await pool
+      .request()
+      .input('numCuenta', sql.Int, numCuenta)
+      .input('nuevoSaldo', sql.Int, nuevoSaldo)
+      .query('UPDATE Clientes_Cuentas SET saldo = @nuevoSaldo WHERE num_cuenta = @numCuenta');
+
+    pool.close();
+  } catch (error) {
+    console.error('Error al actualizar el saldo de la cuenta:', error);
+    throw error;
+  }
+}
+
+
 // Exportamos las funciones
 module.exports = {
     insertarBanco,
@@ -203,4 +244,6 @@ module.exports = {
     obtenerTipoMoneda,
     obtenerCedulaCliente,
     obtenerIdCliente,
+    obtenerSaldoCuenta,
+    actualizarSaldoCuenta,
 };

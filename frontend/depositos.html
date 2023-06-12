@@ -27,17 +27,17 @@
             </div>            
         </div>
     </header>
-<body>
+
     <section class="depositos">
         <div class="depositos__contenedor">            
-            <form class="depositos__formulario">
+            <form action="/realizarDeposito" method="post" class="depositos__formulario">
                 <h2 class="depositos__heading">Depositos</h2>
                 <fieldset>
-                    <label for="">Número de cuenta:</label>
-                    <input class="depositos__input" type="number" id="" placeholder="Ejemplo: "placeholder="Ejemplo: 123321">
+                    <label for="numCuenta">Número de cuenta:</label>
+                    <input class="depositos__input" type="number" name="numCuenta" id="numCuenta" placeholder="Ejemplo: 123321">
         
-                    <label for="">Cantidad:</label>
-                    <input class="depositos__input" type="number" id="" placeholder="Ejemplo: 100000">
+                    <label for="monto">Monto:</label>
+                    <input class="depositos__input" type="number" name="monto" id="monto" placeholder="Ejemplo: 100000">
                 </fieldset>
                 <div class="depositos__botones">
                     <button class="depositos__boton" type="submit">Depositar</button>
@@ -48,28 +48,28 @@
 
    <!-- FOOTER -->
    <footer class="footer">
-    <div class="footer__contenedor">
-        <div class="footer__texto">
-            <div class="footer__organizacion">
-                <h3>Organizacion:</h3>
-                <div class="footer__imagen">
-                    <img class="footer__logo" src="/img/CUC.png" alt="">
+        <div class="footer__contenedor">
+            <div class="footer__texto">
+                <div class="footer__organizacion">
+                    <h3>Organizacion:</h3>
+                    <div class="footer__imagen">
+                        <img class="footer__logo" src="/img/CUC.png" alt="">
+                    </div>
+                    <a class="footer_cuc" href="https://www.cuc.ac.cr/" target="_blank">Colegio Universitario de Cartago</a>
                 </div>
-                <a class="footer_cuc" href="https://www.cuc.ac.cr/" target="_blank">Colegio Universitario de Cartago</a>
-            </div>
-            <div class="footer__estudiantes">
-                <h3>Estudiantes:</h3>
-                <ul>
-                    <li class="name__flex">
-                        <img class="star" src="img/star.png" alt="">
-                        <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
-                    </li>
-                    <li>Jazmín Solano Serrano</li>
-                    <li>Josue Leitón Nuñez</li>
-                </ul>
-            </div>
-        </div>            
-    </div>
-</footer>
+                <div class="footer__estudiantes">
+                    <h3>Estudiantes:</h3>
+                    <ul>
+                        <li class="name__flex">
+                            <img class="star" src="img/star.png" alt="">
+                            <p class="owner"><span>B</span>randon <span>G</span>ómez <span>C</span>arvajal</p>
+                        </li>
+                        <li>Jazmín Solano Serrano</li>
+                        <li>Josue Leitón Nuñez</li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </footer>
 </body>
 </html>

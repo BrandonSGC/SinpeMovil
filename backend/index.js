@@ -19,6 +19,9 @@ const { obtenerTiposCuentas } = require('./database.js');
 const { obtenerTipoMoneda } = require('./database.js');
 const { obtenerCedulaCliente } = require('./database.js');
 const { obtenerIdCliente } = require('./database.js');
+const { obtenerSaldoCuenta } = require('./database.js');
+
+const { actualizarSaldoCuenta } = require('./database.js');
 
 // Configurar el middleware body-parser.
 // Se encarga de procesar y analizar esos datos en un formato 
@@ -185,6 +188,28 @@ app.get('/obtenerCedulaCliente', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send('Error al obtener los datos del cliente.');
+  }
+});
+
+
+app.post('/realizarDeposito', async (req, res) => {
+  const numCuenta = req.body.numCuenta;
+  const monto = req.body.monto;
+
+  try {
+    // Obtener el saldo actual de la cuenta desde la base de datos
+    const saldoActual = await obtenerSaldoCuenta(numCuenta);
+
+    // Calcular el nuevo saldo después del depósito
+    const nuevoSaldo = parseInt(saldoActual) + parseInt(monto);
+
+    // Actualizar el saldo en la base de datos
+    await actualizarSaldoCuenta(numCuenta, nuevoSaldo);
+
+    res.send('Depósito realizado correctamente');
+  } catch (error) {
+    console.error('Error al realizar el depósito:', error);
+    res.status(500).send('Error al realizar el depósito');
   }
 });
 
